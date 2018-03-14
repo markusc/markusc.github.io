@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="styles/markusc.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script type="text/javascript" src="Chart.PriceLabel.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+            $('#fullpage').fullpage({
+              anchors: ['cover', 'content'],
+              slidesNavigation: true,
+              controlArrows: false,
+              navigation: true,
+              navigationPosition: 'right',
+              keyboardScrolling: true
+            });
+            $(".navbar .nav-link").on("click", function(){
+              $(".navbar").find(".active").removeClass("active");
+              $(this).addClass("active");
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <div id="fullpage">
+      <div class="section" id="kansi">
+        <h1><strong>Markus Cronvall</strong></h1>
+        <h2>Opiskelija | Turun Yliopisto</h2>
+        <a href="https://github.com/markusc" target="blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/markuscronvall/" target="blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <div class="pointer">
+          <a href="#content"><i class="fa fa-angle-double-down" style="font-size:60px"></i></a>
+        </div>
+      </div>
+      <div class="section" id="section2" data-anchor="page2">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light" data-toggle="affix">
+          <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center" id="navbarsExample11">
+              <ul class="navbar-nav">
+                <li class="nav-item active" data-menuanchor="cover">
+                  <a class="nav-link" href="#content">TIETOA</a>
+                </li>
+                <li class="nav-item" data-menuanchor="content">
+                  <a class="nav-link" href="#content/1">OSAAMINEN</a>
+                </li>
+                <li class="nav-item" data-menuanchor="content">
+                  <a class="nav-link" href="#content/2">OTA YHTEYTTÄ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="slide" id="slide1">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="content">
+                  <h2><strong> Yleistä tietoa</strong></h2>
+                  <h3>
+                    Olen 22-vuotias tietojenkäsittelytieteiden opiskelija Turusta. Muutin Turkuun vuonna 2016 aloittaessani opintoni valmistuttuani ylioppilaaksi Jokelan lukiosta vuonna 2015. Puhun äidinkielenäni suomea, sekä sujuvasti englantia.<br>
+                    Suoritan tällä hetkellä luonnontieteiden kandidaatin tutkintoa ja tarkoitukseni on valmistua vuonna 2019. Sivuaineeni ovat liiketoimintaosaaminen, sekä matematiikka. Liiketoimintaosaamisen sivuainekokonaisuuteen kuuluu mm. markkinoinnin ja myynnin perusteet, liiketoimintaympäristön taloustiede, sekä johdatus taloushallintoon.
+                  </h3>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="content">
+                  <h2><strong>Kiinnostuksen kohteet</strong></h2>
+                  <h3>
+                    Olen kiinnostunut erityisesti web- ja mobiilikehityksestä. Tämänhetkisissä harrasteprojekteissani olen tutustunut HTML-, CSS- ja JavaScript-kieliin. Niitä käyttäessäni olen pyrkinyt tutustumaan Bootstrap- ja React-kirjastoihin, sekä WordPressiin ja Gitiin. Yritän aktiivisesti oppia uutta siitä, miten sivuista ja sovelluksista tehdään responsiivisia, sekä siitä, mitkä ovat parhaimpia käytänteitä niitä kehitettäessä.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" id="slide2">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="pie">
+                  <canvas id="pieChart" height="100%" width="100%"></canvas>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="kokemus">
+                  <h3>
+                    En omaa toistaiseksi varsinaista työkokemusta ohjelmointialalta. Opiskelen jatkuvasti vapaa-ajallani uusia asioita, jotka ovat olennaisia nykypäivän kehitystyössä. Tällä hetkellä olen keskittynyt enimmäkseen HTML5, CSS3, JavaScriptiin ja WordPressiin.
+                    Niiden lisäksi haluan oppia erityisesti .NET-, iOS-, React- ja Angular-kehitystä.<br> Olen myös suorittanut yliopisto-opintojani opintosuunnitelman mukaiseen tahtiin, joten tietämystä on karttunut kahden ensimmäisen vuoden kursseilta, sekä niiden aikana tehdyistä harjoitustöistä.
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" id="slide3">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="contact" id="contactForm">
+                  <p>Vaihtoehtoisesti voit lähettää viestisi suoraan osoitteeseen <strong>markus.cronvall@gmail.com</strong></p>
+                  <form id="contactform" action="https://formspree.io/markus.cronvall@gmail.com" method="POST" onsubmit="this.submit(); this.reset(); return false;">
+                    <div class="col-lg-12">
+                      <div class="row">
+                        <div class="col-lg-12 form-group">
+                          <input class="form-control" id="email" name="_replyto" placeholder="Sähköpostiosoitteesi" type="email" required>
+                        </div>
+                      </div>
+                      <textarea class="form-control" id="text-area" name="message" placeholder="Viestisi" rows="5"></textarea>
+                      <div class="row">
+                        <div class="col-lg-12 form-group">
+                          <button class="btn btn-default pull-left" type="submit" style="margin-top: 15px">Lähetä</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var ctxP = document.getElementById("pieChart").getContext('2d');
+      var myPieChart = new Chart(ctxP, {
+          type: 'pie',
+          data: {
+              labels: ["HTML", "CSS", "JS"],
+              datasets: [
+                  {
+                      data: [350, 250, 100],
+                      backgroundColor: ["#005ce6", "#1a8cff", "#4da6ff"],
+                      hoverBackgroundColor: ["#0047b3", "#0073e6", "#1a8cff"]
+                  }
+              ]
+          },
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              legend: {
+                  display: false
+              },
+              pieceLabel: {
+                  render: 'label',
+                  fontColor: '#FFFFFF',
+                  fontSize: 34,
+                  overlap: true
+              }
+          }    
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
