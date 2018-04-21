@@ -40,6 +40,11 @@
     padding: 3%;
 }
 
+#slide2 h2 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 #kansi a {
     color: #242424;
     font-size: 2em;
@@ -86,4 +91,6 @@
 
 .kokemus {
     text-align: left;
+    padding-bottom: 5%;
+    padding-top: 5%;
 }
